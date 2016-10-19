@@ -7,6 +7,7 @@
 
 /* uVisor pointer */
 typedef struct {
+  int numb;
 } my_box_context;
 
 /* Configure ACL */
@@ -31,6 +32,4 @@ static void my_boxb_main(const void *)
 		/* Print the secret */
     print_secret();
 	}
-
-
 }

@@ -78,7 +78,7 @@ static void my_box_main(const void *)
   else
   {
       /* register handler for switch SW1 */
-      uvisor_ctx->sw-m>ode(PullUp);
+      uvisor_ctx->sw->mode(PullUp);
       uvisor_ctx->sw->fall(my_box_switch_irq);
   }
 
