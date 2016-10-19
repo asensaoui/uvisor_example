@@ -60,6 +60,7 @@ void thready()
   /* do some stuff */
   while(1)
   {
+    /* Simulate some work */
     for(int i = 0; i<5000;i++);
   }
 }
@@ -77,17 +78,13 @@ static void my_box_main(const void *)
   else
   {
       /* register handler for switch SW1 */
-      uvisor_ctx->sw->mode(PullUp);
+      uvisor_ctx->sw-m>ode(PullUp);
       uvisor_ctx->sw->fall(my_box_switch_irq);
-
-      /* no problem to return here as everything is initialized */
-      
   }
-
 
 	init_secret();
 
-    /* Start ScThread Thread */
+    /* Start Thready  */
   Thread * threadsc = new Thread();
   status = threadsc->start(thready);
   if (status != osOK) {
@@ -111,8 +108,5 @@ static void my_box_main(const void *)
         uvisor_ctx->pc->printf("Failure is not an option.\r\n");
         uvisor_error(USER_NOT_ALLOWED);
     }
-
 	}
-
-
 }

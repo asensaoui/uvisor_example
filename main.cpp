@@ -2,7 +2,6 @@
 #include "rtos.h"
 #include "uvisor-lib/uvisor-lib.h"
 
-#include "boxa.h"
 
 
 /* Main box Access Control Lists (ACLs). */
@@ -21,12 +20,6 @@ static const UvisorBoxAclItem g_main_box_acls[] = {
 UVISOR_SET_MODE_ACL(UVISOR_ENABLED, g_main_box_acls);
 
 DigitalOut led1(LED2);
-DigitalOut led2(LED1);
-
-void blink_led(void)
-{ 
-    led1 = !led1;
-}
 
 int main() {
 
@@ -34,8 +27,7 @@ int main() {
 
   
   while(1){      
-    
-    
+    /* Blink led */ 
     led1 = !led1;
 		Thread::wait(1000);
   }
